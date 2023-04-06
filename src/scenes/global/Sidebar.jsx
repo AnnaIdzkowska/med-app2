@@ -15,6 +15,7 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import { ReactComponent as HeartIcon } from "../../assets/icons88.svg";
 
 const Item = ({title, to, icon, selected, setSelected}) => {
 const theme = useTheme();
@@ -86,12 +87,11 @@ const Sidebar = () => {
 								display='flex'
 								justifyContent='center'
 								alignItems='center'>
-								<img
+								<HeartIcon
 									alt='profile-user'
 									width='100px'
 									height='100px'
-									src={`../../assets/icons8.png`}
-									style={{ cursor: "pointer" }}
+									style={{ fill: colors.grey[100] }}
 								/>
 							</Box>
 							<Box textAlign='center'>
@@ -104,7 +104,7 @@ const Sidebar = () => {
 								</Typography>
 								<Typography
 									variant='h3'
-									color={colors.greenAccent[500]}>
+									color={colors.redAccent[500]}>
 									LUX-MED
 								</Typography>
 							</Box>
@@ -143,32 +143,32 @@ const Sidebar = () => {
 						</Typography>
 						<Item
 							title='PACJENCI'
-							to='/patients'
-							icon={<ContactsOutlinedIcon />}
-							selected={selected}
-							setSelected={setSelected}
-						/>
-						<Item
-							title='PACJENCI2'
 							to='/patient'
 							icon={<ContactsOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
 						<Item
+							title='PACJENCI-PROJEKTY'
+							to='/patients'
+							icon={<ContactsOutlinedIcon />}
+							selected={selected}
+							setSelected={setSelected}
+						/>
+						{/* <Item
 							title='FORMULARZ PACJENTA'
 							to='/form'
 							icon={<PersonOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
-						/>
-						<Item
+						/> */}
+						{/* <Item
 							title='PACJENCI - PROJEKTY'
 							to='/connections'
 							icon={<PeopleOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
-						/>
+						/> */}
 
 						<Typography
 							variant='h6'

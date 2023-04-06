@@ -8,10 +8,9 @@ import React, { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import EditIcon from "@mui/icons-material/EditOutlined";
 
-
 const Patients = () => {
-		const theme = useTheme();
-		const colors = tokens(theme.palette.mode);
+	const theme = useTheme();
+	const colors = tokens(theme.palette.mode);
 	const apiRef = useGridApiRef();
 
 	const deletePatient = (id) => {
@@ -19,7 +18,7 @@ const Patients = () => {
 		setPatients(result);
 	};
 	const editPatient = (event, id) => {
-		apiRef.current.startRowEditMode({id})
+		apiRef.current.startRowEditMode({ id });
 	};
 
 	const defaultColumns = [
@@ -146,7 +145,6 @@ const Patients = () => {
 					"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
 						color: `${colors.grey[100]} !important`,
 					},
-					
 				}}>
 				<DataGrid
 					rows={patients}

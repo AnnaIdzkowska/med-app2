@@ -1,6 +1,9 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
+import { mockDataContacts } from "../../data/mockData";
+import { tokens } from "../../theme";
+import { useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
@@ -9,10 +12,10 @@ import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
 import {
 	GridRowModes,
-	DataGridPro,
+	DataGrid,
 	GridToolbarContainer,
 	GridActionsCellItem,
-} from "@mui/x-data-grid-pro";
+} from "@mui/x-data-grid";
 import {
 	randomCreatedDate,
 	randomTraderName,
@@ -20,47 +23,12 @@ import {
 	randomId,
 } from "@mui/x-data-grid-generator";
 
-const initialRows = [
-	{
-		id: randomId(),
-		name: randomTraderName(),
-		age: 25,
-		dateCreated: randomCreatedDate(),
-		lastLogin: randomUpdatedDate(),
-	},
-	{
-		id: randomId(),
-		name: randomTraderName(),
-		age: 36,
-		dateCreated: randomCreatedDate(),
-		lastLogin: randomUpdatedDate(),
-	},
-	{
-		id: randomId(),
-		name: randomTraderName(),
-		age: 19,
-		dateCreated: randomCreatedDate(),
-		lastLogin: randomUpdatedDate(),
-	},
-	{
-		id: randomId(),
-		name: randomTraderName(),
-		age: 28,
-		dateCreated: randomCreatedDate(),
-		lastLogin: randomUpdatedDate(),
-	},
-	{
-		id: randomId(),
-		name: randomTraderName(),
-		age: 23,
-		dateCreated: randomCreatedDate(),
-		lastLogin: randomUpdatedDate(),
-	},
-];
+
 
 function EditToolbar(props) {
 	const { setRows, setRowModesModel } = props;
-
+	const theme = useTheme();
+	const colors = tokens(theme.palette.mode);
 	const handleClick = () => {
 		const id = randomId();
 		setRows((oldRows) => [...oldRows, { id, name: "", age: "", isNew: true }]);
@@ -73,7 +41,7 @@ function EditToolbar(props) {
 	return (
 		<GridToolbarContainer>
 			<Button
-				color='primary'
+				style={{ color: colors.grey[100] }}
 				startIcon={<AddIcon />}
 				onClick={handleClick}>
 				Add record
@@ -88,8 +56,10 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-	const [rows, setRows] = React.useState(initialRows);
+	const [rows, setRows] = React.useState(mockDataContacts);
 	const [rowModesModel, setRowModesModel] = React.useState({});
+	const theme = useTheme();
+	const colors = tokens(theme.palette.mode);
 
 	const handleRowEditStart = (params, event) => {
 		event.defaultMuiPrevented = true;
@@ -134,20 +104,56 @@ export default function FullFeaturedCrudGrid() {
 	};
 
 	const columns = [
-		{ field: "name", headerName: "Name", width: 180, editable: true },
-		{ field: "age", headerName: "Age", type: "number", editable: true },
+		// { field: "id", headerName: "ID", flex: 0.5 },
 		{
-			field: "dateCreated",
-			headerName: "Date Created",
-			type: "date",
-			width: 180,
+			field: "registrarId",
+			headerName: "Numer rejestracyjny",
+			flex: 0.5,
 			editable: true,
 		},
 		{
-			field: "lastLogin",
-			headerName: "Last Login",
-			type: "dateTime",
-			width: 220,
+			field: "name",
+			headerName: "Imię i Nazwisko",
+			flex: 1,
+			cellClassName: "name-column--cell",
+			editable: true,
+		},
+		{
+			field: "age",
+			headerName: "Wiek",
+			type: "number",
+			headerAlign: "left",
+			align: "left",
+			editable: true,
+		},
+		{
+			field: "phone",
+			headerName: "Numer telefonu",
+			flex: 1,
+			editable: true,
+		},
+		{
+			field: "email",
+			headerName: "Email",
+			flex: 1,
+			editable: true,
+		},
+		{
+			field: "address",
+			headerName: "Adres",
+			flex: 1,
+			editable: true,
+		},
+		{
+			field: "city",
+			headerName: "Miasto",
+			flex: 1,
+			editable: true,
+		},
+		{
+			field: "zipCode",
+			headerName: "Kod pocztowy",
+			flex: 0.5,
 			editable: true,
 		},
 		{
@@ -197,17 +203,41 @@ export default function FullFeaturedCrudGrid() {
 
 	return (
 		<Box
+			m='40px 0 0 0'
+			height='80vh'
 			sx={{
-				height: 500,
-				width: "100%",
-				"& .actions": {
-					color: "text.secondary",
+				"& .MuiDataGrid-root": {
+					border: "none",
 				},
-				"& .textPrimary": {
-					color: "text.primary",
+				"& .MuiDataGrid-cell": {
+					borderBottom: "0.5px solid colors.grey[100]",
 				},
+				"& .name-column--cell": {
+					color: colors.redAccent[200],
+				},
+				"& .MuiDataGrid-columnHeaders": {
+					backgroundColor: colors.blueAccent[800],
+					borderBottom: "none",
+				},
+				"& .MuiDataGrid-virtualScroller": {
+					backgroundColor: colors.primary[400],
+				},
+				"& .MuiDataGrid-footerContainer": {
+					borderTop: "none",
+					backgroundColor: colors.blueAccent[800],
+				},
+				"& .MuiCheckbox-root": {
+					color: `${colors.greenAccent[200]} !important`,
+				},
+				"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+					color: `${colors.grey[100]} !important`,
+				},
+				"& .MuiDataGrid-root .MuiDataGrid-virtualScrollerContent--overflowed .MuiDataGrid-row--lastVisible .MuiDataGrid-cell":
+					{
+						backgroundColor: colors.primary[400],
+					},
 			}}>
-			<DataGridPro
+			<DataGrid
 				rows={rows}
 				columns={columns}
 				editMode='row'
