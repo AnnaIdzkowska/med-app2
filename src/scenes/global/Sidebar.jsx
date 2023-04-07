@@ -141,16 +141,16 @@ const Sidebar = () => {
 							sx={{ m: "15px 0 5px 20px" }}>
 							Pacjenci
 						</Typography>
-						<Item
+						{/* <Item
 							title='PACJENCI'
-							to='/patient'
+							to='/patients'
 							icon={<ContactsOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
-						/>
+						/> */}
 						<Item
-							title='PACJENCI-PROJEKTY'
-							to='/patients'
+							title='PACJENCI'
+							to='/patient'
 							icon={<ContactsOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
@@ -162,13 +162,13 @@ const Sidebar = () => {
 							selected={selected}
 							setSelected={setSelected}
 						/> */}
-						{/* <Item
+						<Item
 							title='PACJENCI - PROJEKTY'
 							to='/connections'
 							icon={<PeopleOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
-						/> */}
+						/>
 
 						<Typography
 							variant='h6'
