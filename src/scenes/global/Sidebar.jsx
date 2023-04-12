@@ -47,10 +47,10 @@ const Sidebar = () => {
 					padding: "5px 35px 5px 20px !important",
 				},
 				"& .pro-inner-item:hover": {
-					color: "#868dfb !important",
+					color: `${colors.primary[100]} !important`,
 				},
 				"& .pro-menu-item.active": {
-					color: "#6870fa !important",
+					color: `${colors.primary[200]} !important`,
 				},
 			}}>
 			<ProSidebar collapsed={isCollapsed}>
@@ -121,14 +121,14 @@ const Sidebar = () => {
 							setSelected={setSelected}
 						/>
 						<Item
-							title='Bar Chart'
+							title='Wykres pacjentów'
 							to='/bar'
 							icon={<BarChartOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
 						<Item
-							title='Line Chart'
+							title='Wykres projektów'
 							to='/line'
 							icon={<TimelineOutlinedIcon />}
 							selected={selected}

@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
+import LineChart from "../../components/ProjectsChart";
 
 const Line = () => {
 	return (
 		<Box m='20px'>
 			<Header
-				title='Line Chart'
-				subtitle='Simple Line Chart'
+				title='Ilość projektów w danym roku'
+				subtitle='Wykres słupkowy'
 			/>
 			<Box height='75vh'>
 				<LineChart />

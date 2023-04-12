@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataTeam, mockDataProjects } from "../../data/mockData";
+import { mockDataContacts, mockDataProjects } from "../../data/mockData";
 import DoneOutlined from "@mui/icons-material/DoneOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import RemoveDoneOutlined from "@mui/icons-material/RemoveDoneOutlined";
@@ -63,13 +63,13 @@ const Connections = () => {
 			/>
 			<Box
 				m='40px 0 0 0'
-				height='75vh'
+				height='50vh'
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",
 					},
 					"& .MuiDataGrid-cell": {
-						borderBottom: "none",
+						borderBottom: "0.5px solid colors.grey[100]",
 					},
 					"& .name-column--cell": {
 						color: colors.greenAccent[300],
@@ -91,7 +91,7 @@ const Connections = () => {
 				}}>
 				<DataGrid
 					checkboxSelection
-					rows={mockDataTeam}
+					rows={mockDataContacts}
 					columns={columns}
 				/>
 			</Box>

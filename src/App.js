@@ -9,7 +9,6 @@ import Patients2 from "./scenes/patient";
 
 import Projects from "./scenes/projects";
 import Bar from "./scenes/bar";
-import Form from "./scenes/form";
 import Line from "./scenes/line";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -48,10 +47,6 @@ function App() {
 							<Route
 								path='/projects'
 								element={<Projects />}
-							/>
-							<Route
-								path='/form'
-								element={<Form />}
 							/>
 							<Route
 								path='/bar'

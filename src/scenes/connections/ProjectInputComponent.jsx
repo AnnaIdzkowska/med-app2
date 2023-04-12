@@ -26,10 +26,10 @@ const ProjectInputComponent = (props) => {
 	return (
 		<Box
 			// sx={{ minWidth:'150px'  }}
-			height='90%'
-			width='100%'
+			height='100%'
+			width='80%'
 			m='1'
-			p='5px'
+			p='3px'
 			display='flex'
 			justifyContent='center'
 			borderRadius='4px'>
@@ -37,7 +37,7 @@ const ProjectInputComponent = (props) => {
 				variant='standard'
 				htmlFor='uncontrolled-native'></InputLabel>
 			<Select
-				sx={{ backgroundColor: 'red', width: '60%' }}
+				sx={{ backgroundColor: colors.primary[400], width: '60%' }}
 				labelId='demo-select-small'
 				id='demo-select-small'
 				value={project}

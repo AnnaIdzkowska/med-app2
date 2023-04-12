@@ -22,6 +22,7 @@ import {
 	randomUpdatedDate,
 	randomId,
 } from "@mui/x-data-grid-generator";
+import Header from "../../components/Header";
 
 
 
@@ -40,11 +41,15 @@ function EditToolbar(props) {
 
 	return (
 		<GridToolbarContainer>
+			<Header
+				title='PACJENCI'
+				subtitle='Dane kontaktowe'
+			/>
 			<Button
-				style={{ color: colors.grey[100] }}
+				style={{ color: colors.grey[100], margin: '150px -150px 0' }}
 				startIcon={<AddIcon />}
 				onClick={handleClick}>
-				Add record
+				Dodaj pacjenta
 			</Button>
 		</GridToolbarContainer>
 	);
@@ -159,8 +164,8 @@ export default function FullFeaturedCrudGrid() {
 		{
 			field: "actions",
 			type: "actions",
-			headerName: "Actions",
-			width: 100,
+			headerName: "Operacja",
+			flex:1,
 			cellClassName: "actions",
 			getActions: ({ id }) => {
 				const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
@@ -203,7 +208,7 @@ export default function FullFeaturedCrudGrid() {
 
 	return (
 		<Box
-			m='40px 0 0 0'
+			m='20px'
 			height='80vh'
 			sx={{
 				"& .MuiDataGrid-root": {
@@ -213,7 +218,7 @@ export default function FullFeaturedCrudGrid() {
 					borderBottom: "0.5px solid colors.grey[100]",
 				},
 				"& .name-column--cell": {
-					color: colors.redAccent[200],
+					color: colors.blueAccent[200],
 				},
 				"& .MuiDataGrid-columnHeaders": {
 					backgroundColor: colors.blueAccent[800],

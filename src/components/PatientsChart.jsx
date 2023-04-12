@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../theme";
-import { mockBarData as data } from "../data/mockData";
+import { mockDataProjects as data } from "../data/mockData";
 
 const BarChart = ({ isDashboard = false }) => {
 	const theme = useTheme();
@@ -39,33 +39,14 @@ const BarChart = ({ isDashboard = false }) => {
 					},
 				},
 			}}
-			keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-			indexBy='country'
+			keys={["numberOfPatients"]}
+			indexBy='name'
 			margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
 			padding={0.3}
 			valueScale={{ type: "linear" }}
 			indexScale={{ type: "band", round: true }}
-			colors={{ scheme: "nivo" }}
-			defs={[
-				{
-					id: "dots",
-					type: "patternDots",
-					background: "inherit",
-					color: "#38bcb2",
-					size: 4,
-					padding: 1,
-					stagger: true,
-				},
-				{
-					id: "lines",
-					type: "patternLines",
-					background: "inherit",
-					color: "#eed312",
-					rotation: -45,
-					lineWidth: 6,
-					spacing: 10,
-				},
-			]}
+			colors={{ scheme: "pastel2"}}
+
 			borderColor={{
 				from: "color",
 				modifiers: [["darker", "1.6"]],
@@ -76,7 +57,7 @@ const BarChart = ({ isDashboard = false }) => {
 				tickSize: 5,
 				tickPadding: 5,
 				tickRotation: 0,
-				legend: isDashboard ? undefined : "country", // changed
+				legend: isDashboard ? undefined : "PROJEKTY", // changed
 				legendPosition: "middle",
 				legendOffset: 32,
 			}}
@@ -84,7 +65,7 @@ const BarChart = ({ isDashboard = false }) => {
 				tickSize: 5,
 				tickPadding: 5,
 				tickRotation: 0,
-				legend: isDashboard ? undefined : "food", // changed
+				legend: isDashboard ? undefined : "ILOŚĆ PACJENTÓW", // changed
 				legendPosition: "middle",
 				legendOffset: -40,
 			}}
