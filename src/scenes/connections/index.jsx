@@ -63,7 +63,7 @@ const Connections = () => {
 			/>
 			<Box
 				m='40px 0 0 0'
-				height='50vh'
+				height='70vh'
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",

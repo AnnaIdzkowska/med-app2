@@ -14,7 +14,7 @@ export const mockDataContacts = [
 		zipCode: "10001",
 		registrarId: 123512,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 2",
 	},
 	{
 		id: 2,
@@ -27,7 +27,7 @@ export const mockDataContacts = [
 		zipCode: "13151",
 		registrarId: 123512,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 5",
 	},
 	{
 		id: 3,
@@ -40,7 +40,7 @@ export const mockDataContacts = [
 		zipCode: "87281",
 		registrarId: 4132513,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 3",
 	},
 	{
 		id: 4,
@@ -53,7 +53,7 @@ export const mockDataContacts = [
 		zipCode: "15551",
 		registrarId: 123512,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 2",
 	},
 	{
 		id: 5,
@@ -66,7 +66,7 @@ export const mockDataContacts = [
 		zipCode: "14215",
 		registrarId: 123512,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 4",
 	},
 	{
 		id: 6,
@@ -78,7 +78,7 @@ export const mockDataContacts = [
 		city: "Esvazark",
 		zipCode: "10001",
 		registrarId: 123512,
-		access: "tak",
+		access: "nie",
 		project: "Project 1",
 	},
 	{
@@ -92,7 +92,7 @@ export const mockDataContacts = [
 		zipCode: "51523",
 		registrarId: 123512,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 6",
 	},
 	{
 		id: 8,
@@ -104,7 +104,7 @@ export const mockDataContacts = [
 		city: "Esteras",
 		zipCode: "44215",
 		registrarId: 512315,
-		access: "tak",
+		access: "nie",
 		project: "Project 1",
 	},
 	{
@@ -118,7 +118,7 @@ export const mockDataContacts = [
 		zipCode: "111234",
 		registrarId: 928397,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 5",
 	},
 	{
 		id: 10,
@@ -131,7 +131,7 @@ export const mockDataContacts = [
 		zipCode: "44215",
 		registrarId: 533215,
 		access: "tak",
-		project: "Project 1",
+		project: "Project 3",
 	},
 	{
 		id: 11,
@@ -143,8 +143,8 @@ export const mockDataContacts = [
 		city: "Colunza",
 		zipCode: "1234",
 		registrarId: 92197,
-		access: "tak",
-		project: "Project 1",
+		access: "nie",
+		project: "Project 2",
 	},
 ];
 export const mockDataProjects = [
