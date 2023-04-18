@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import {  mockDataProjects } from "../../data/mockData";
+import { mockDataContacts } from "../../data/mockData";
 import DoneOutlined from "@mui/icons-material/DoneOutlined";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import RemoveDoneOutlined from "@mui/icons-material/RemoveDoneOutlined";
@@ -14,23 +14,20 @@ import Header from "../../components/Header";
 import { useRef } from "react";
 import { useState } from "react";
 
-const ProjectInputComponent = (props) => {
+const PatientInput = (props) => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
-	const [project, setProject] = useState(props.project);
+	const [patient, setPatient] = useState(props.patient);
 
 	const handleChange = (event) => {
-		setProject(event.target.value);
-		props.changeProject(event.target.value, props.id);
-		// console.log(props);
-
+		setPatient(event.target.value);
 	};
 
 	return (
 		<Box
 			// sx={{ minWidth:'150px'  }}
 			height='100%'
-			width='80%'
+			width='100%'
 			m='1'
 			p='3px'
 			display='flex'
@@ -40,17 +37,17 @@ const ProjectInputComponent = (props) => {
 				variant='standard'
 				htmlFor='uncontrolled-native'></InputLabel>
 			<Select
-				sx={{ backgroundColor: colors.primary[400], width: "60%" }}
+				sx={{ backgroundColor: colors.primary[400], width: "100%" }}
 				labelId='demo-select-small'
 				id='demo-select-small'
-				value={project}
-				label='project'
+				value={patient}
+				label='patient'
 				onChange={(event) => handleChange(event)}>
-				{mockDataProjects.map((project) => (
+				{props.patients.map((patient) => (
 					<MenuItem
-						key={project.id}
-						value={project.name}>
-						{project.name}
+						key={patient.id}
+						value={patient.name}>
+						{patient.name}
 					</MenuItem>
 				))}
 			</Select>
@@ -58,4 +55,4 @@ const ProjectInputComponent = (props) => {
 	);
 };
 
-export default ProjectInputComponent;
+export default PatientInput;

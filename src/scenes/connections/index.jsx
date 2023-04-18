@@ -13,16 +13,17 @@ import RemoveDoneOutlined from "@mui/icons-material/RemoveDoneOutlined";
 import Header from "../../components/Header";
 import { useRef } from "react";
 import { useState } from "react";
-import AccessInputComponent from "./AccessInputComponent copy";
+import AccessInputComponent from "./AccessInputComponent";
 import ProjectInputComponent from "./ProjectInputComponent";
 
 const Connections = () => {
 
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
+	
 
 	const columns = [
-		{ field: "id", headerName: "ID" },
+		// { field: "id", headerName: "ID" },
 		{
 			field: "name",
 			headerName: "Imię i Nazwisko",
@@ -33,11 +34,26 @@ const Connections = () => {
 			field: "project",
 			headerName: "Projekty",
 			flex: 1,
-			renderCell: ({ row: { project } }) => {
+			renderCell: ({ row: { project, id }}) => {
+				// .changeProject(props.project, event.target.value);
+				const changeProject = (value, projectId) => {
+
+					// const project = [...mockDataContacts.filter(project => project.id === projectId).map(project => project.id = projectId)]
+					// console.log(project);
+					// console.log(mockDataContacts);
+					// mockDataContacts.project = value;
+
+					const contactTable = mockDataContacts.filter(contact => contact.id === projectId);
+					const contactObj = contactTable[0];
+					contactObj.project = value;
+					
+				};
 				return (
 					<ProjectInputComponent
-						projects={mockDataProjects}
+						projects={mockDataContacts}
 						project={project}
+						id={id}
+						changeProject={changeProject}
 					/>
 				);
 			},
@@ -72,7 +88,7 @@ const Connections = () => {
 						borderBottom: "0.5px solid colors.grey[100]",
 					},
 					"& .name-column--cell": {
-						color: colors.greenAccent[300],
+						color: colors.blueAccent[200],
 					},
 					"& .MuiDataGrid-columnHeaders": {
 						backgroundColor: colors.blueAccent[700],

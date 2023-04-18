@@ -53,7 +53,7 @@ const Dashboard = () => {
 					alignItems='center'
 					justifyContent='center'>
 					<StatBox
-						title='12,361'
+						title='361'
 						subtitle='wybitnych specjalistów'
 						progress='0.75'
 						increase='+84%'
@@ -71,7 +71,7 @@ const Dashboard = () => {
 					alignItems='center'
 					justifyContent='center'>
 					<StatBox
-						title='431,225'
+						title='1,225'
 						subtitle='Zrobionych badań'
 						progress='0.50'
 						increase='+71%'
@@ -89,7 +89,7 @@ const Dashboard = () => {
 					alignItems='center'
 					justifyContent='center'>
 					<StatBox
-						title='32,441'
+						title='1,441'
 						subtitle='Nowych pacjentów'
 						progress='0.30'
 						increase='+5%'
@@ -107,7 +107,7 @@ const Dashboard = () => {
 					alignItems='center'
 					justifyContent='center'>
 					<StatBox
-						title='1,325,134'
+						title='1,130'
 						subtitle='Pozytywnych opinii'
 						progress='0.80'
 						increase='+83%'
@@ -193,7 +193,7 @@ const Dashboard = () => {
 					<Typography
 						variant='h5'
 						fontWeight='600'
-						sx={{ padding: "30px 30px 0 30px" }}>
+						sx={{ padding: "50px 30px 0 30px" }}>
 						Ilość pacjentów
 					</Typography>
 					<Box

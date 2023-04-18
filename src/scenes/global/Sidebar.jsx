@@ -105,7 +105,7 @@ const Sidebar = () => {
 								<Typography
 									variant='h3'
 									color={colors.redAccent[500]}>
-									LUX-MED
+									GOOD-MED
 								</Typography>
 							</Box>
 						</Box>
@@ -130,7 +130,7 @@ const Sidebar = () => {
 						<Item
 							title='Wykres projektów'
 							to='/line'
-							icon={<TimelineOutlinedIcon />}
+							icon={<BarChartOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
@@ -151,7 +151,7 @@ const Sidebar = () => {
 						<Item
 							title='PACJENCI'
 							to='/patient'
-							icon={<ContactsOutlinedIcon />}
+							icon={<PeopleOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
@@ -165,7 +165,7 @@ const Sidebar = () => {
 						<Item
 							title='PACJENCI - PROJEKTY'
 							to='/connections'
-							icon={<PeopleOutlinedIcon />}
+							icon={<ContactsOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
@@ -192,14 +192,14 @@ const Sidebar = () => {
 						</Typography>
 						<Item
 							title='ZLECENIA BADAŃ'
-							to='/calendar'
+							to='/orders'
 							icon={<CalendarTodayOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}
 						/>
 						<Item
 							title='WYNIKI BADAŃ'
-							to='/faq'
+							to='/results'
 							icon={<HelpOutlineOutlinedIcon />}
 							selected={selected}
 							setSelected={setSelected}

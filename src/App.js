@@ -4,14 +4,14 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Connections from "./scenes/connections";
-import Patients from "./scenes/patients";
 import Patients2 from "./scenes/patient";
-
+import Orders from "./scenes/orders"
 import Projects from "./scenes/projects";
 import Bar from "./scenes/bar";
 import Line from "./scenes/line";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+import Results from "./scenes/results";
 
 
 function App() {
@@ -35,11 +35,8 @@ function App() {
 								path='/connections'
 								element={<Connections />}
 							/>
-							<Route
-								path='/patients'
-								element={<Patients />}
-							/>
-							
+				
+
 							<Route
 								path='/patient'
 								element={<Patients2 />}
@@ -55,6 +52,14 @@ function App() {
 							<Route
 								path='/line'
 								element={<Line />}
+							/>
+							<Route
+								path='/orders'
+								element={<Orders />}
+							/>
+							<Route
+								path='/results'
+								element={<Results />}
 							/>
 						</Routes>
 					</main>

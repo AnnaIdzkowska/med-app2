@@ -1,12 +1,15 @@
 import { Box, Button } from "@mui/material";
 import { DataGrid, GridToolbar, useGridApiRef } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataOrders, mockDataProjects, mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import EditIcon from "@mui/icons-material/EditOutlined";
+import AccessInput from "./AccessInput";
+import ProjectInput from "./ProjectInput";
+import PatientInput from "./PatientInput";
 
 const Patients = () => {
 	const theme = useTheme();
@@ -22,57 +25,122 @@ const Patients = () => {
 	};
 
 	const defaultColumns = [
-		{ field: "id", headerName: "ID", flex: 0.5 },
-		{ field: "registrarId", headerName: "Numer rejestracyjny", flex: 0.5 },
+		// { field: "id", headerName: "ID" },
 		{
 			field: "name",
-			headerName: "Imię i Nazwisko",
-			flex: 1,
+			headerName: "Nazwa zlecenia",
+			flex: 0.5,
 			cellClassName: "name-column--cell",
 			editable: false,
 		},
 		{
-			field: "age",
-			headerName: "Wiek",
-			type: "number",
+			field: "date",
+			headerName: "Data zlecenia",
+			flex: 0.5,
 			headerAlign: "left",
 			align: "left",
 			editable: true,
 		},
 		{
-			field: "phone",
-			headerName: "Numer telefonu",
+			field: "patient",
+			headerName: "Pacjenci",
 			flex: 1,
-			editable: true,
+			renderCell: ({ row: { patient } }) => {
+				return (
+					<PatientInput
+						patients={mockDataContacts}
+						patient={patient}
+					/>
+				);
+			},
 		},
 		{
-			field: "email",
-			headerName: "Email",
+			field: "project",
+			headerName: "Projekty",
 			flex: 1,
-			editable: true,
+			renderCell: ({ row: { project } }) => {
+				return (
+					<ProjectInput
+						projects={mockDataProjects}
+						project={project}
+					/>
+				);
+			},
 		},
 		{
-			field: "address",
-			headerName: "Adres",
-			flex: 1,
-			editable: true,
-		},
-		{
-			field: "city",
-			headerName: "Miasto",
-			flex: 1,
-			editable: true,
-		},
-		{
-			field: "zipCode",
-			headerName: "Kod pocztowy",
+			field: "morfologiaKrwiPełna",
+			headerName: "Leukocyty",
 			flex: 0.5,
-			editable: true,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { morfologiaKrwiPełna } }) => {
+				return <AccessInput value={morfologiaKrwiPełna} />;
+			},
+		},
+		{
+			field: "erytrocyty",
+			headerName: "Erytrocyty",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { OB } }) => {
+				return <AccessInput value={OB} />;
+			},
+		},
+		{
+			field: "hemoglobina",
+			headerName: "Hemoglobina",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { CRP } }) => {
+				return <AccessInput value={CRP} />;
+			},
+		},
+		{
+			field: "hematokryt",
+			headerName: "Hematokryt",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { glukoza } }) => {
+				return <AccessInput value={glukoza} />;
+			},
+		},
+		{
+			field: "mch",
+			headerName: "MCH",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { kreatynina } }) => {
+				return <AccessInput value={kreatynina} />;
+			},
+		},
+		{
+			field: "mchc",
+			headerName: "MCHC",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { homocysteina } }) => {
+				return <AccessInput value={homocysteina} />;
+			},
+		},
+		{
+			field: "płytkiKrwi",
+			headerName: "Płytki krwi",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			renderCell: ({ row: { TSH } }) => {
+				return <AccessInput value={TSH} />;
+			},
 		},
 		{
 			field: "icon",
 			headerName: "Actions",
-			flex: 1,
+			flex: 0.8,
 			sortable: false,
 			filterable: false,
 			renderCell: (event, params) => (
@@ -104,7 +172,7 @@ const Patients = () => {
 		},
 	];
 
-	const [patients, setPatients] = useState(mockDataContacts);
+	const [patients, setPatients] = useState(mockDataOrders);
 	const [columns, setColumns] = useState(defaultColumns);
 	const gridRef = React.useRef(null);
 	const getRowId = (row) => row.id;
@@ -112,8 +180,8 @@ const Patients = () => {
 	return (
 		<Box m='20px'>
 			<Header
-				title='DANE ADRESOWE'
-				subtitle='Tabela z podstawowymi danymi pacjentów'
+				title='ZLECENIA BADAŃ'
+				subtitle='W ramach danego projektu'
 			/>
 			<Box
 				m='40px 0 0 0'
@@ -126,7 +194,7 @@ const Patients = () => {
 						borderBottom: "none",
 					},
 					"& .name-column--cell": {
-						color: colors.greenAccent[300],
+						color: colors.blueAccent[200],
 					},
 					"& .MuiDataGrid-columnHeaders": {
 						backgroundColor: colors.blueAccent[700],
@@ -149,7 +217,7 @@ const Patients = () => {
 				<DataGrid
 					rows={patients}
 					columns={defaultColumns}
-					components={{ Toolbar: GridToolbar }}
+					//  components={{ Toolbar: GridToolbar }}
 					ref={gridRef}
 					editMode='row'
 					getRowId={getRowId}

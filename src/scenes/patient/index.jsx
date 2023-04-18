@@ -30,6 +30,7 @@ function EditToolbar(props) {
 	const { setRows, setRowModesModel } = props;
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
+	
 	const handleClick = () => {
 		const id = randomId();
 		setRows((oldRows) => [...oldRows, { id, name: "", age: "", isNew: true }]);

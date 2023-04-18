@@ -1,7 +1,8 @@
-import * as React from "react";
+
+    import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
-import { mockDataContacts, mockDataProjects } from "../../data/mockData";
+import { mockDataContacts, mockDataResults } from "../../data/mockData";
 import { tokens } from "../../theme";
 import { useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -40,14 +41,14 @@ function EditToolbar(props) {
 	return (
 		<GridToolbarContainer>
 			<Header
-				title='PROJEKTY'
-				subtitle='Podstawowe informacje'
+				title='WYNIKI BADAŃ'
+				subtitle='Dla poszczególnych zleceń'
 			/>
 			<Button
-				style={{ color: colors.grey[100], margin: "150px -180px 0" }}
+				style={{ color: colors.grey[100], margin: "150px -220px 0" }}
 				startIcon={<AddIcon />}
 				onClick={handleClick}>
-				Dodaj nowy projekt
+				Dodaj kolejne badanie
 			</Button>
 		</GridToolbarContainer>
 	);
@@ -59,7 +60,7 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-	const [rows, setRows] = React.useState(mockDataProjects);
+	const [rows, setRows] = React.useState(mockDataResults);
 	const [rowModesModel, setRowModesModel] = React.useState({});
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
@@ -108,29 +109,44 @@ export default function FullFeaturedCrudGrid() {
 
 	const columns = [
 		//  { field: "id", headerName: "ID", flex: 0.5 },
+		// { field: "id", headerName: "ID" },
 		{
-			field: "name",
-			headerName: "Nazwa projektu",
-			flex: 1,
+			field: "test",
+			headerName: "Badanie",
+			flex: 0.5,
 			cellClassName: "name-column--cell",
 			editable: true,
 		},
 		{
-			field: "numberOfPatients",
-			headerName: "Ilość pacjentów w projekcie",
-			flex: 1,
+			field: "result",
+			headerName: "Wynik",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
 			editable: true,
 		},
 		{
-			field: "startDate",
-			headerName: "Data rozpoczęcia projektu",
-			flex: 1,
+			field: "unit",
+			headerName: "Jedn.",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
 			editable: true,
 		},
 		{
-			field: "description",
-			headerName: "Opis projektu",
-			flex: 1,
+			field: "min",
+			headerName: "MIN",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
+			editable: true,
+		},
+		{
+			field: "max",
+			headerName: "MAX",
+			flex: 0.5,
+			headerAlign: "left",
+			align: "left",
 			editable: true,
 		},
 		{
