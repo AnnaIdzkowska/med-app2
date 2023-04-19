@@ -9,12 +9,12 @@ I used the react-router-dom library for routing.
 
 In the project directory, you can run:
 
-### git clone https://github.com/AnnaIdzkowska/med-app2.git
+#### git clone https://github.com/AnnaIdzkowska/med-app2.git
 
 Then navigate to the med-admin folder in the terminal.
 
-### npm install
-### npm start
+#### npm install
+#### npm start
 
 
 ## Application view
