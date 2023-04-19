@@ -2,7 +2,8 @@
 
 
 
-An application for managing a medical center written using ReactJS with the use of MUI/Boostrap components
+An application for managing a medical center written using ReactJS with the use of MUI/Boostrap components.
+I used the react-router-dom library for routing.
 
 ## How to run a project
 
@@ -18,9 +19,13 @@ Then navigate to the med-admin folder in the terminal.
 
 ## Application view
 #### summary view
+dashboard view
 ![](images/Zrzut1.png)
+chart showing the number of patients in projects based on data from the mockData.js file
 ![](images/Zrzut2.png)
+chart showing the number of projects in a given year based on data from the mockData.js file
 ![](images/Zrzut3.png)
+chart showing the number of tests based on data from the mockData.js file
 ![](images/Zrzut4.png)
 #### patient management view
 
