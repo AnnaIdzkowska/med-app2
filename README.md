@@ -7,8 +7,6 @@ I used the react-router-dom library for routing.
 
 ## How to run a project
 
-In the project directory, you can run:
-
 #### git clone https://github.com/AnnaIdzkowska/med-app2.git
 
 Then navigate to the med-admin folder in the terminal.
