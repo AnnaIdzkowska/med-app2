@@ -21,12 +21,16 @@ Then navigate to the med-admin folder in the terminal.
 #### summary view
 dashboard view
 ![](images/Zrzut1.png)
+
 chart showing the number of patients in projects based on data from the mockData.js file
 ![](images/Zrzut2.png)
+
 chart showing the number of projects in a given year based on data from the mockData.js file
 ![](images/Zrzut3.png)
+
 chart showing the number of tests based on data from the mockData.js file
 ![](images/Zrzut4.png)
+
 #### patient management view
 
 Table with a list of patients and their data (pagination, sorting, searching by column). Possibility to add, delete, edit patients.
