@@ -16,7 +16,7 @@ Then navigate to the med-admin folder in the terminal.
 
 
 ## Application view
-#### summary view
+#### - summary view
 dashboard view
 ![](images/Zrzut1.png)
 
@@ -29,25 +29,25 @@ chart showing the number of projects in a given year based on data from the mock
 chart showing the number of tests based on data from the mockData.js file
 ![](images/Zrzut4.png)
 
-#### patient management view
+#### - patient management view
 
 Table with a list of patients and their data (pagination, sorting, searching by column). Possibility to add, delete, edit patients.
 
 ![](images/Zrzut5.png)
-#### view of adding patients to projects
+#### - view of adding patients to projects
 table with a list of patients (their data) related to the selected project and information whether consent has been granted (possibility to change the project and consent).
 ![](images/Zrzut6.png)
-#### project management view
+#### - project management view
 
 Table with a list of projects and the number of patients in the project (pagination, sorting, searching by column). Possibility to add, delete, edit projects.
 ![](images/Zrzut7.png)
 
-#### view of test orders
+#### - view of test orders
 
 Table with a list of orders and tests within a given order for a patient under a project (filtering by project and date). Ability to add, delete, edit orders.
 
 ![](images/Zrzut8.png)
-#### view of test results
+#### - view of test results
 
 Table with a list of tests. Possibility of adding, deleting, editing.
 ![](images/Zrzut9.png)
