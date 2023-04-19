@@ -1,17 +1,11 @@
 import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockDataTeam } from "../../data/mockData";
-import DoneOutlined from "@mui/icons-material/DoneOutlined";
 import CheckIcon from "@mui/icons-material/Check";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
-import Header from "../../components/Header";
-import { useRef } from "react";
 import { useState } from "react";
 
 const ValueInput = (props) => {

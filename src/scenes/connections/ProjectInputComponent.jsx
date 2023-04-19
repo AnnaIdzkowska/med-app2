@@ -1,17 +1,10 @@
 import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import {  mockDataProjects } from "../../data/mockData";
-import DoneOutlined from "@mui/icons-material/DoneOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import RemoveDoneOutlined from "@mui/icons-material/RemoveDoneOutlined";
-import Header from "../../components/Header";
-import { useRef } from "react";
 import { useState } from "react";
 
 const ProjectInputComponent = (props) => {
@@ -22,13 +15,11 @@ const ProjectInputComponent = (props) => {
 	const handleChange = (event) => {
 		setProject(event.target.value);
 		props.changeProject(event.target.value, props.id);
-		// console.log(props);
 
 	};
 
 	return (
 		<Box
-			// sx={{ minWidth:'150px'  }}
 			height='100%'
 			width='80%'
 			m='1'

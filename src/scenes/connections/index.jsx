@@ -1,18 +1,9 @@
 import * as React from "react";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts, mockDataProjects } from "../../data/mockData";
-import DoneOutlined from "@mui/icons-material/DoneOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import RemoveDoneOutlined from "@mui/icons-material/RemoveDoneOutlined";
+import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
-import { useRef } from "react";
-import { useState } from "react";
 import AccessInputComponent from "./AccessInputComponent";
 import ProjectInputComponent from "./ProjectInputComponent";
 
@@ -35,18 +26,10 @@ const Connections = () => {
 			headerName: "Projekty",
 			flex: 1,
 			renderCell: ({ row: { project, id }}) => {
-				// .changeProject(props.project, event.target.value);
 				const changeProject = (value, projectId) => {
-
-					// const project = [...mockDataContacts.filter(project => project.id === projectId).map(project => project.id = projectId)]
-					// console.log(project);
-					// console.log(mockDataContacts);
-					// mockDataContacts.project = value;
-
 					const contactTable = mockDataContacts.filter(contact => contact.id === projectId);
 					const contactObj = contactTable[0];
-					contactObj.project = value;
-					
+					contactObj.project = value;					
 				};
 				return (
 					<ProjectInputComponent
@@ -91,7 +74,7 @@ const Connections = () => {
 						color: colors.blueAccent[200],
 					},
 					"& .MuiDataGrid-columnHeaders": {
-						backgroundColor: colors.blueAccent[700],
+						backgroundColor: colors.blueAccent[800],
 						borderBottom: "none",
 					},
 					"& .MuiDataGrid-virtualScroller": {
@@ -99,14 +82,20 @@ const Connections = () => {
 					},
 					"& .MuiDataGrid-footerContainer": {
 						borderTop: "none",
-						backgroundColor: colors.blueAccent[700],
+						backgroundColor: colors.blueAccent[800],
 					},
 					"& .MuiCheckbox-root": {
 						color: `${colors.greenAccent[200]} !important`,
 					},
+					"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+						color: `${colors.grey[100]} !important`,
+					},
+					"& .MuiDataGrid-root .MuiDataGrid-virtualScrollerContent--overflowed .MuiDataGrid-row--lastVisible .MuiDataGrid-cell":
+						{
+							backgroundColor: colors.primary[400],
+						},
 				}}>
 				<DataGrid
-					checkboxSelection
 					rows={mockDataContacts}
 					columns={columns}
 				/>

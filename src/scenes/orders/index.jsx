@@ -1,10 +1,10 @@
 import { Box, Button } from "@mui/material";
-import { DataGrid, GridToolbar, useGridApiRef } from "@mui/x-data-grid";
+import { DataGrid, useGridApiRef } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataOrders, mockDataProjects, mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import EditIcon from "@mui/icons-material/EditOutlined";
 import AccessInput from "./AccessInput";
@@ -185,19 +185,19 @@ const Patients = () => {
 			/>
 			<Box
 				m='40px 0 0 0'
-				height='75vh'
+				height='65vh'
 				sx={{
 					"& .MuiDataGrid-root": {
 						border: "none",
 					},
 					"& .MuiDataGrid-cell": {
-						borderBottom: "none",
+						borderBottom: "0.5px solid colors.grey[100]",
 					},
 					"& .name-column--cell": {
 						color: colors.blueAccent[200],
 					},
 					"& .MuiDataGrid-columnHeaders": {
-						backgroundColor: colors.blueAccent[700],
+						backgroundColor: colors.blueAccent[800],
 						borderBottom: "none",
 					},
 					"& .MuiDataGrid-virtualScroller": {
@@ -205,7 +205,7 @@ const Patients = () => {
 					},
 					"& .MuiDataGrid-footerContainer": {
 						borderTop: "none",
-						backgroundColor: colors.blueAccent[700],
+						backgroundColor: colors.blueAccent[800],
 					},
 					"& .MuiCheckbox-root": {
 						color: `${colors.greenAccent[200]} !important`,
@@ -213,11 +213,14 @@ const Patients = () => {
 					"& .MuiDataGrid-toolbarContainer .MuiButton-text": {
 						color: `${colors.grey[100]} !important`,
 					},
+					"& .MuiDataGrid-root .MuiDataGrid-virtualScrollerContent--overflowed .MuiDataGrid-row--lastVisible .MuiDataGrid-cell":
+						{
+							backgroundColor: colors.primary[400],
+						},
 				}}>
 				<DataGrid
 					rows={patients}
 					columns={defaultColumns}
-					//  components={{ Toolbar: GridToolbar }}
 					ref={gridRef}
 					editMode='row'
 					getRowId={getRowId}

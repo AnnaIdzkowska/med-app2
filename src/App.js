@@ -4,11 +4,12 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Connections from "./scenes/connections";
-import Patients2 from "./scenes/patient";
+import Patient from "./scenes/patient";
 import Orders from "./scenes/orders"
 import Projects from "./scenes/projects";
-import Bar from "./scenes/bar";
-import Line from "./scenes/line";
+import PatientsChart from "./scenes/patientsChart";
+import ProjectsChart from "./scenes/projectsChart";
+import ResearchPieChart from "./scenes/researchChart";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Results from "./scenes/results";
@@ -35,23 +36,26 @@ function App() {
 								path='/connections'
 								element={<Connections />}
 							/>
-				
 
 							<Route
 								path='/patient'
-								element={<Patients2 />}
+								element={<Patient />}
 							/>
 							<Route
 								path='/projects'
 								element={<Projects />}
 							/>
 							<Route
-								path='/bar'
-								element={<Bar />}
+								path='/patientsChart'
+								element={<PatientsChart />}
 							/>
 							<Route
-								path='/line'
-								element={<Line />}
+								path='/projectsChart'
+								element={<ProjectsChart />}
+							/>
+							<Route
+								path='/researchChart'
+								element={<ResearchPieChart />}
 							/>
 							<Route
 								path='/orders'

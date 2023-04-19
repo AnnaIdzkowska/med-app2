@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import LineChart from "../../components/ProjectsChart";
+import ProjectsChart from "../../components/ProjectsChart";
 
-const Line = () => {
+const Bar = () => {
 	return (
 		<Box m='20px'>
 			<Header
@@ -10,10 +10,10 @@ const Line = () => {
 				subtitle='Wykres słupkowy'
 			/>
 			<Box height='75vh'>
-				<LineChart />
+				<ProjectsChart />
 			</Box>
 		</Box>
 	);
 };
 
-export default Line;
+export default Bar;

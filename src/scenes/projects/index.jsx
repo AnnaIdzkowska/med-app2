@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
-import { mockDataContacts, mockDataProjects } from "../../data/mockData";
+import {  mockDataProjects } from "../../data/mockData";
 import { tokens } from "../../theme";
 import { useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -17,9 +17,6 @@ import {
 	GridActionsCellItem,
 } from "@mui/x-data-grid";
 import {
-	randomCreatedDate,
-	randomTraderName,
-	randomUpdatedDate,
 	randomId,
 } from "@mui/x-data-grid-generator";
 import Header from "../../components/Header";
@@ -53,10 +50,7 @@ function EditToolbar(props) {
 	);
 }
 
-EditToolbar.propTypes = {
-	setRowModesModel: PropTypes.func.isRequired,
-	setRows: PropTypes.func.isRequired,
-};
+
 
 export default function FullFeaturedCrudGrid() {
 	const [rows, setRows] = React.useState(mockDataProjects);
@@ -111,33 +105,33 @@ export default function FullFeaturedCrudGrid() {
 		{
 			field: "name",
 			headerName: "Nazwa projektu",
-			flex: 1,
+			flex: 0.5,
 			cellClassName: "name-column--cell",
 			editable: true,
 		},
 		{
 			field: "numberOfPatients",
 			headerName: "Ilość pacjentów w projekcie",
-			flex: 1,
+			flex: 0.5,
 			editable: true,
 		},
 		{
 			field: "startDate",
 			headerName: "Data rozpoczęcia projektu",
-			flex: 1,
+			flex: 0.5,
 			editable: true,
 		},
 		{
 			field: "description",
 			headerName: "Opis projektu",
-			flex: 1,
+			flex: 1.5,
 			editable: true,
 		},
 		{
 			field: "actions",
 			type: "actions",
 			headerName: "Operacja",
-			flex: 1,
+			flex: 0.5,
 			cellClassName: "actions",
 			getActions: ({ id }) => {
 				const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;

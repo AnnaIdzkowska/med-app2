@@ -8,6 +8,7 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import Header from "../../components/Header";
 import ProjectsChart from "../../components/ProjectsChart";
 import PatientsChart from "../../components/PatientsChart";
+import ResearchChart from "../../components/ResearchChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
@@ -34,7 +35,7 @@ const Dashboard = () => {
 							padding: "10px 20px",
 						}}>
 						<DownloadOutlinedIcon sx={{ mr: "10px" }} />
-						Download Reports
+						Pobierz raport
 					</Button>
 				</Box>
 			</Box>
@@ -174,14 +175,16 @@ const Dashboard = () => {
 						display='flex'
 						flexDirection='column'
 						alignItems='center'
-						mt='25px'>
+						mt='5px'>
 						<ProgressCircle size='125' />
 						<Typography
 							variant='h5'
 							sx={{ mt: "15px" }}>
 							PLN 500 000,00 usyskanego dofinansowania
 						</Typography>
-						<Typography color={colors.grey[300]}>
+						<Typography
+							color={colors.grey[300]}
+							overflow='hidden'>
 							na wsparcie kolejnych projektów
 						</Typography>
 					</Box>
@@ -198,8 +201,25 @@ const Dashboard = () => {
 					</Typography>
 					<Box
 						height='250px'
+						width='100%'
 						mt='-20px'>
 						<PatientsChart isDashboard={true} />
+					</Box>
+				</Box>
+				<Box
+					gridColumn='span 6'
+					gridRow='span 2'
+					backgroundColor={colors.primary[400]}>
+					<Typography
+						variant='h5'
+						fontWeight='600'
+						sx={{ padding: "50px 30px 0 30px" }}>
+						Ilość badań
+					</Typography>
+					<Box
+						height='250px'
+						mt='-30px'>
+						<ResearchChart isDashboard={true} />
 					</Box>
 				</Box>
 			</Box>

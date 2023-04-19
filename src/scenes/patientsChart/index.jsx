@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import BarChart from "../../components/PatientsChart";
+import PatientsChart from "../../components/PatientsChart";
 
 const Bar = () => {
 	return (
@@ -10,7 +10,7 @@ const Bar = () => {
 				subtitle='Wykres słupkowy'
 			/>
 			<Box height='75vh'>
-				<BarChart />
+				<PatientsChart />
 			</Box>
 		</Box>
 	);

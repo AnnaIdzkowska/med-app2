@@ -17,9 +17,6 @@ import {
 	GridActionsCellItem,
 } from "@mui/x-data-grid";
 import {
-	randomCreatedDate,
-	randomTraderName,
-	randomUpdatedDate,
 	randomId,
 } from "@mui/x-data-grid-generator";
 import Header from "../../components/Header";
@@ -111,12 +108,6 @@ export default function FullFeaturedCrudGrid() {
 
 	const columns = [
 		// { field: "id", headerName: "ID", flex: 0.5 },
-		{
-			field: "registrarId",
-			headerName: "Numer rejestracyjny",
-			flex: 0.5,
-			editable: true,
-		},
 		{
 			field: "name",
 			headerName: "Imię i Nazwisko",
