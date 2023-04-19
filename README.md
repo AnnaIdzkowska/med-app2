@@ -47,7 +47,7 @@ Table with a list of projects and the number of patients in the project (paginat
 
 #### - view of test orders
 
-Table with a list of orders and tests within a given order for a patient under a project (filtering by project and date). Ability to add, delete, edit orders.
+Table with a list of orders and tests within a given order for a patient under a project (filtering by project and date). Ability to delete, edit orders.
 ![](images/Zrzut8.png)
 
 #### - view of test results
